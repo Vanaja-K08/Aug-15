@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Registration</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+
+  <header class="bg-slate-800/60 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="text-xl font-extrabold text-sky-400">Student <span class="text-white">Registration</span></a>
+    <nav class="hidden md:flex gap-6 text-slate-200">
+        <a href="#form" class="hover:text-sky-300">Register</a>
+        <a href="#list" class="hover:text-sky-300">List</a>
+      </nav>
+      <button id="menuToggle" class="md:hidden p-2 rounded hover:bg-slate-700/40" aria-label="Toggle menu">
+        <!-- simple hamburger -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+
+    <section id="form" class="bg-slate-800/50 rounded-xl p-6 shadow">
+      <h2 class="text-2xl font-bold mb-4">Register Student</h2>
+
+      <form id="studentForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+         <input required id="name" name="name" placeholder="Student Name" class="p-3 rounded bg-slate-700 border border-slate-600" />
+        <input required id="idInput" name="id" placeholder="Student ID" class="p-3 rounded bg-slate-700 border border-slate-600" />
+        <input required id="emailid" name="emailid" placeholder="Email ID" class="p-3 rounded bg-slate-700 border border-slate-600 md:col-span-2" />
+        <input required id="contact" name="contact" placeholder="Contact number" class="p-3 rounded bg-slate-700 border border-slate-600 md:col-span-2" />
+
+
+        <div class="md:col-span-2 flex gap-3">
+          <button type="submit" id="submitBtn" class="bg-sky-400 text-slate-900 px-4 py-2 rounded font-semibold shadow">Register Student</button>
+          <button type="button" id="cancelEditBtn" class="hidden bg-yellow-500 text-slate-900 px-4 py-2 rounded font-semibold shadow">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="list" class="bg-slate-800/50 rounded-xl p-6 shadow">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold">Registered Students</h2>
+        
+      </div>
+
+      <div class="overflow-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-700/60 sticky top-0">
+            <tr>
+              <th class="text-left px-3 py-2">#</th>
+              <th class="text-left px-3 py-2">Student Name</th>
+              <th class="text-left px-3 py-2">Student ID</th>
+              <th class="text-left px-3 py-2">Email ID</th>
+              <th class="text-left px-3 py-2">Contact</th>
+              <th class="text-left px-3 py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentList" class="divide-y divide-slate-700"></tbody>
+        </table>
+
+        <div id="emptyState" class="mt-6 text-center text-slate-400">
+          No students yet. Add a student using the form above.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-6 text-center text-slate-400">
+    © <span id="year"></span> Student Registration 
+  </footer>
+
+  <script src="./studentregistration.js"></script>
+</body>
+</html>
