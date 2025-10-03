@@ -1,3 +1,7 @@
+
+// GitHub link
+// https://github.com/Vanaja-K08/Aug-15
+
 const studentForm = document.getElementById('studentForm');
 const nameInput = document.getElementById('name');
 const idInput = document.getElementById('idInput');
